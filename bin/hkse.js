@@ -2,7 +2,7 @@
 import { pathCrypt } from "../lib/core.js";
 import chalk from "chalk";
 
-const VERSION = "0.1.1";
+const VERSION = "0.1.2";
 const args = process.argv.slice(2);
 
 // Handle help
@@ -18,13 +18,13 @@ ${chalk.cyan("Options:")}
   ${chalk.yellow("--version, -v")}    Show version number
 
 ${chalk.cyan("Arguments:")}
-  ${chalk.yellow("-d / -e")}          Action: decrypt or encrypt
+  ${chalk.yellow("d / e")}          Action: decrypt or encrypt
   ${chalk.yellow("<file>")}           Path to the save file
   ${chalk.yellow("<output|'self'>")}  Output path or "self" to overwrite
 
 ${chalk.cyan("Examples:")}
- ${chalk.green("hkse -d user1.dat self")}
- ${chalk.green("hkse -e user1.dat user1_encrypted.dat")}
+ ${chalk.green("hkse d user1.dat self")}
+ ${chalk.green("hkse e user1.dat user1_encrypted.dat")}
 `);
   process.exit(0);
 }
@@ -45,12 +45,12 @@ const [action, file, outputArg] = args;
 const outputPath = outputArg === "self" ? null : outputArg;
 
 try {
-  if (action === "-d" || action === "-e") {
+  if (action === "d" || action === "e") {
     console.log(chalk.blue(`Processing ${file}...`));
     pathCrypt(file, outputPath, action);
     console.log(chalk.green(`✅ Done!`));
   } else {
-    throw new Error("Action must be '-d' or '-e'");
+    throw new Error("Action must be 'd' or 'e'");
   }
 } catch (err) {
   console.error(chalk.red(err.message));

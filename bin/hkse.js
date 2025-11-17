@@ -8,7 +8,9 @@ const args = process.argv.slice(2);
 // Handle help
 if (args.includes("--help") || args.includes("-h")) {
   console.log(`
-${chalk.bold.green("Hollow Knight Save Editor (hkse)")} ${chalk.yellow(`v${VERSION}`)}
+${chalk.bold.green("Hollow Knight Save Editor (hkse)")} ${chalk.yellow(
+    `v${VERSION}`
+  )}
 
 ${chalk.cyan("Usage:")}
   hkse <-d|-e> <file> <output|"self">
@@ -30,7 +32,7 @@ ${chalk.cyan("Examples:")}
 }
 
 // Handle version
-if (args.includes("--version") || args.includes("-v")||args.includes("--v")) {
+if (args.includes("--version") || args.includes("-v") || args.includes("--v")) {
   console.log(chalk.yellow(`hkse version ${VERSION}`));
   process.exit(0);
 }

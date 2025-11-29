@@ -1,6 +1,6 @@
 {
   "name": "hkse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hollow Knight Save Editor CLI",
   "type": "module",
   "bin": {

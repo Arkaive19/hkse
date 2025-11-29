@@ -1,15 +1,17 @@
 #!/usr/bin/env node
 import { pathCrypt } from "../lib/core.js";
 import chalk from "chalk";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const { version } = require("../package.json");
 
-const VERSION = "0.1.2";
 const args = process.argv.slice(2);
 
 // Handle help
 if (args.includes("--help") || args.includes("-h")) {
   console.log(`
 ${chalk.bold.green("Hollow Knight Save Editor (hkse)")} ${chalk.yellow(
-    `v${VERSION}`,
+    `v${version}`
   )}
 
 ${chalk.cyan("Usage:")}
@@ -33,7 +35,7 @@ ${chalk.cyan("Examples:")}
 
 // Handle version
 if (args.includes("--version") || args.includes("-v") || args.includes("--v")) {
-  console.log(chalk.yellow(`hkse version ${VERSION}`));
+  console.log(chalk.yellow(`hkse version ${version}`));
   process.exit(0);
 }
 

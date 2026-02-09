@@ -1,0 +1,23 @@
+{
+  "name": "hkse",
+  "version": "1.0.1",
+  "description": "Hollow Knight Save Editor CLI",
+  "type": "module",
+  "bin": {
+    "hkse": "bin/hkse.js"
+  },
+  "scripts": {
+    "start": "node ./bin/hkse.js"
+  },
+  "dependencies": {
+    "aes-js": "^3.1.2",
+    "chalk": "^5.6.2",
+    "hkse": "^1.0.3"
+  },
+  "author": "Arkaive19",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
+}
